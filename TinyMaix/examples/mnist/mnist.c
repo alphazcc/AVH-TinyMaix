@@ -137,21 +137,21 @@ static void parse_output(tm_mat_t* outs)
     return;
 }
 
-int main(int argc, char** argv)
+int mnist(const uint8_t *data)
 {   TM_DBGT_INIT();
-    TM_PRINTF("mnist demo\n");
+    // TM_PRINTF("mnist demo\n");
     tm_mdl_t mdl;
 
     for(int i=0; i<28*28; i++){
-        TM_PRINTF("%3d,", mnist_pic[i]);
+        TM_PRINTF("%2X,", data[i]);
         if(i%28==27)TM_PRINTF("\n");
     }
 
-    tm_mat_t in_uint8 = {3,28,28,1, {(mtype_t*)mnist_pic}};
+    tm_mat_t in_uint8 = {3,28,28,1, {(mtype_t*)data}};
     tm_mat_t in = {3,28,28,1, {NULL}};
     tm_mat_t outs[1];
     tm_err_t res;
-    tm_stat((tm_mdlbin_t*)mdl_data); 
+    // tm_stat((tm_mdlbin_t*)mdl_data); 
 
     res = tm_load(&mdl, mdl_data, NULL, layer_cb, &in);
     if(res != TM_OK) {

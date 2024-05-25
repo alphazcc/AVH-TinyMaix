@@ -62,7 +62,10 @@ static void app_main (void *argument) {
 
   if (status == 0) {
     /* Start demos. */
-    DEMO_RUNNER_RunDemos();
+    // DEMO_RUNNER_RunDemos();
+
+    int user_app_init(void);
+    user_app_init();
 
     // Add user code here:
     osDelay(osWaitForever);

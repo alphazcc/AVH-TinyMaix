@@ -49,9 +49,9 @@ limitations under the License.
 #define TM_DBGL()      TM_PRINTF("###L%d\n",__LINE__);
 
 /******************************* DBG TIME CONFIG  ************************************/
-#include <sys/time.h>
-#include <time.h>
-#define  TM_GET_US()       ((uint32_t)((uint64_t)clock()*1000000/CLOCKS_PER_SEC))
+#include "FreeRTOS.h"
+#include "FreeRTOSConfig.h"
+#define  TM_GET_US()       ((uint32_t)((uint64_t)xTaskGetTickCount()*1000000/configTICK_RATE_HZ))
 
 #define TM_DBGT_INIT()     uint32_t _start,_finish;float _time;_start=TM_GET_US();
 #define TM_DBGT_START()    _start=TM_GET_US();
