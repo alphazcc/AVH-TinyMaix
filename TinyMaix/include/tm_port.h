@@ -50,7 +50,7 @@ limitations under the License.
 
 /******************************* DBG TIME CONFIG  ************************************/
 #include "FreeRTOS.h"
-#include "FreeRTOSConfig.h"
+#include "task.h"
 #define  TM_GET_US()       ((uint32_t)((uint64_t)xTaskGetTickCount()*1000000/configTICK_RATE_HZ))
 
 #define TM_DBGT_INIT()     uint32_t _start,_finish;float _time;_start=TM_GET_US();

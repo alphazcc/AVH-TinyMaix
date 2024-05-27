@@ -1,6 +1,6 @@
 #include <stdint.h>
 #include "FreeRTOS.h"
-#include "FreeRTOSConfig.h"
+#include "task.h"
 
 int mnist(const uint8_t *data);
 
