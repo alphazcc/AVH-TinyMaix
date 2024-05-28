@@ -116,6 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=/home/ubuntu/packs/tools/cmsis-toolbox-linux-arm64/bin:$PATH
+export PATH=/opt/VHT:/opt/VHT/bin:$PATH
 export CMSIS_COMPILER_ROOT=/opt/ctools/etc
 export CMSIS_PACK_ROOT=/home/ubuntu/packs
