@@ -2,6 +2,8 @@ This is a project that ports TinyMaix to the AVH platform, based on the MQTT IoT
 
 The Handwritten Number Recognition (MNIST) example has been successfully ported.
 
+The simple image classification model MBNET example has been successfully ported.
+
 ## Runing
 
 Run this example using the "make" command.
@@ -67,10 +69,17 @@ telnetterminal0: Listening for serial connection on port 5002
 ......
 
 ------ Mnist example run completed! ------
+
+------ MBNET example run started! ------
+mbnet demo
+===tm_run use 1574.000 ms
+### Predict output is: Class 290 (jaguar, panther, Panthera onca, Felis onca), Prob 0.289
+
+------ MBNET example run completed! ------
 ```
 
 ## Reference
 
+- [TinyMaix](https://github.com/sipeed/TinyMaix)
 - [AVH-AWS_MQTT_Demo](https://github.com/Arm-Software/AVH-AWS_MQTT_Demo)
 - [AVH-MQTT-DEMO-RECAN](https://github.com/recan-li/AVH-MQTT-DEMO-RECAN)
-- [TinyMaix](https://github.com/sipeed/TinyMaix)
