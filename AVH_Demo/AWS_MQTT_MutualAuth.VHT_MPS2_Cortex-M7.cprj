@@ -112,6 +112,7 @@
       <file category="sourceC" name="../TinyMaix/src/tm_model.c"/>
       <file category="sourceC" name="../TinyMaix/src/tm_stat.c"/>
       <file category="sourceC" name="../TinyMaix/examples/mnist/mnist.c"/>
+      <file category="sourceC" name="../TinyMaix/examples/mbnet/mbnet.c"/>
     </group>
     <group name="demos_include">
       <file category="header" name="./amazon-freertos/demos/include/aws_clientcredential.h"/>

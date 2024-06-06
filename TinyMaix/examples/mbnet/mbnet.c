@@ -16,7 +16,7 @@ limitations under the License.
 //https://github.com/fchollet/deep-learning-models/releases
 
 
-#define IMG_L 128
+#define IMG_L 96
 
 #if IMG_L==128
     #include "pic128.h"
@@ -48,7 +48,7 @@ limitations under the License.
     #error "err pic size"
 #endif
 
-extern const char* labels[1000];
+#include "label.h"
 
 //generate pic c array
 /*
@@ -116,7 +116,7 @@ static void parse_output(tm_mat_t* outs)
     return;
 }
 
-int main(int argc, char** argv)
+int mbnet(int argc, char** argv)
 {   TM_DBGT_INIT();
     TM_PRINTF("mbnet demo\n");
     tm_mdl_t mdl;
@@ -125,7 +125,7 @@ int main(int argc, char** argv)
     tm_mat_t in = {3,IMG_L,IMG_L,3, {NULL}};
     tm_mat_t outs[1];
     tm_err_t res;
-    tm_stat((tm_mdlbin_t*)mdl_data); 
+    // tm_stat((tm_mdlbin_t*)mdl_data); 
 
     res = tm_load(&mdl, mdl_data, NULL, layer_cb, &in);
     if(res != TM_OK) {
@@ -137,7 +137,7 @@ int main(int argc, char** argv)
 #else
     res = tm_preprocess(&mdl, TMPP_UINT2FP01, &in_uint8, &in); 
 #endif
-    TM_DBGT_START();_t0=clock();
+    TM_DBGT_START();//_t0=clock();
     res = tm_run(&mdl, &in, outs);
     TM_DBGT("tm_run");
     if(res==TM_OK) parse_output(outs);  
